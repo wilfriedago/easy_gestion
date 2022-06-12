@@ -7,28 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?php
-            if(isset($_REQUEST['pg'])){
-                switch($_REQUEST['pg']){
+            if (isset($_REQUEST['pg'])) {
+                switch ($_REQUEST['pg']) {
                     case 'home': echo 'Acceuil';
                         break;
-                    case 'members' : echo 'Liste des membres';
+                    case 'members': echo 'Liste des membres';
                         break;
-                    case 'member_add' : echo 'Ajouter un membre';
+                    case 'member_add': echo 'Ajouter un membre';
                         break;
-                    case 'member_details' : echo 'Détails membre';
+                    case 'member_details': echo 'Détails membre';
                         break;
                     case 'maj':
                     case 'del':
-                    case 'articles' : echo 'Liste des articles';
+                    case 'articles': echo 'Liste des articles';
                         break;
-                    case 'article_add' : echo 'Ajouter un article';
+                    case 'article_add': echo 'Ajouter un article';
                         break;
-                    case 'article_details' : echo 'Détails article';
+                    case 'article_details': echo 'Détails article';
                         break;
-                    case 'edit' : echo 'Mise à jour des informations';
+                    case 'edit': echo 'Mise à jour des informations';
                         break;
                 }
-            }else{
+            } else {
                 echo 'Acceuil';
             }
         ?>

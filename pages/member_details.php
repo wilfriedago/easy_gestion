@@ -1,7 +1,7 @@
 <?php
     require_once('connection.php');
     $req="SELECT * FROM members WHERE id='".$_REQUEST['id']."'";
-    $result=mysqli_query($link,$req);
+    $result=mysqli_query($link, $req);
     $ligne=mysqli_fetch_assoc($result);
 ?>
 <div class="container" id="page4">
@@ -26,7 +26,11 @@
                     <tbody>
                         <?php
                             //Algorithme de formatage de message
-                            if ($ligne['sexe'] == 1 ) $sexe = 'Féminin'; else $sexe = 'Masculin';
+                            if ($ligne['sexe'] == 1) {
+                                $sexe = 'Féminin';
+                            } else {
+                                $sexe = 'Masculin';
+                            }
 
                             echo   "<tr><th>Nom</th><td>".$ligne['nom']."</td></tr>"
                                   ."<tr><th>Prénom</th><td>".$ligne['prenom']."</td></tr>"

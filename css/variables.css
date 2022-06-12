@@ -1,25 +1,23 @@
 /*-------------------------- Global Css Variables -------------------------*/
 :root {
+  /* Colors */
+  --pumpkin-orange: #f25430;
+  --light-brown: #4a142b;
+  --midnight-brown: #330e1e;
+  --dark-brown: #19070f;
+  --smoke-white: #f2f2f2;
 
-    /* Colors */
-    --pumpkin-orange: #f25430;
-    --light-brown: #4a142b;
-    --midnight-brown: #330e1e;
-    --dark-brown: #19070f;
-    --smoke-white: #f2f2f2;
-
-    /* Fonts */
-    --Gilroy-Black: Gilroy-Black, sans-serif;
-    --Montserrat-Black: Montserrat-Black, sans-serif;
-    --Montserrat-Bold: Montserrat-Bold, sans-serif;
-    --Montserrat-SemiBold: Montserrat-SemiBold, sans-serif;
-    --Montserrat-Medium: Montserrat-Medium, sans-serif;
-    --Montserrat-Regular: Montserrat-Regular, sans-serif;
-    --Lato-Black: Lato-Black, sans-serif;
-    --Lato-Bold: Lato-Bold, sans-serif;
-    --Lato-Italic: Lato-Italic, sans-serif;
-    --Lato-Regular: Lato-Regular, sans-serif;
-
+  /* Fonts */
+  --Gilroy-Black: Gilroy-Black, sans-serif;
+  --Montserrat-Black: Montserrat-Black, sans-serif;
+  --Montserrat-Bold: Montserrat-Bold, sans-serif;
+  --Montserrat-SemiBold: Montserrat-SemiBold, sans-serif;
+  --Montserrat-Medium: Montserrat-Medium, sans-serif;
+  --Montserrat-Regular: Montserrat-Regular, sans-serif;
+  --Lato-Black: Lato-Black, sans-serif;
+  --Lato-Bold: Lato-Bold, sans-serif;
+  --Lato-Italic: Lato-Italic, sans-serif;
+  --Lato-Regular: Lato-Regular, sans-serif;
 }
 
 /*------------------------- /Global Css Variables\ ------------------------*/

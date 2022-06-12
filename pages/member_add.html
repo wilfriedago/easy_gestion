@@ -1,53 +1,65 @@
 <div class="container" id="page3">
-    <section>
-        <a href="index.php?pg=members" class="backBtn flex-row">
-            <i class="fad fa-arrow-circle-left"></i>
-            <h5>Membres</h5>
-        </a>
-    </section>
-    <section class="big-title">
-        <h2>Ajouter un membre</h2>
-    </section>
-    <section class="form flex-row">
-        <div class="form-area-border">
-            <form action="index.php" method="POST" class="inscription-form flex-column" enctype="multipart/form-data">
-                <h5>
-                    Veuillez entrer les informations du <br> nouveau membre.
-                </h5>
-                <div class="form-area flex-column">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="nom" required>
-                </div>
-                <div class="form-area flex-column">
-                    <label for="prenom">Prénom(s)</label>
-                    <input type="text" name="prenom" id="prenom" required>
-                </div>
-                <div class="form-area flex-column">
-                    <label for="sexe">Sexe</label>
-                    <select name="sexe" id="sexe">
-                        <option value="0">Masculin</option>
-                        <option value="1">Féminin</option>
-                    </select>
-                </div>
-                <div class="form-area flex-column">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                </div>
-                <div class="form-area flex-column">
-                    <label for="contact">Contact</label>
-                    <input type="tel" name="contact" id="contact" required>
-                </div>
-                <div class="form-area flex-column">
-                    <label for="role">Rôle dans le TP</label>
-                    <textarea name="role" id="role" cols="30" rows="8" placeholder="Taper \' pour insérez une apostrophe !"></textarea>
-                </div>
-                <div class="form-area flex-column">
-                    <label for="photo">Uploader votre photo</label>
-                    <input type="file" name="photo" id="photo" accept="image/*">
-                </div>
-                <input type="hidden" name="pg" value="addMember">
-                <button type="submit">Ajouter</button>
-            </form>
+  <section>
+    <a href="index.php?pg=members" class="backBtn flex-row">
+      <i class="fad fa-arrow-circle-left"></i>
+      <h5>Membres</h5>
+    </a>
+  </section>
+  <section class="big-title">
+    <h2>Ajouter un membre</h2>
+  </section>
+  <section class="form flex-row">
+    <div class="form-area-border">
+      <form
+        action="index.php"
+        method="POST"
+        class="inscription-form flex-column"
+        enctype="multipart/form-data"
+      >
+        <h5>
+          Veuillez entrer les informations du <br />
+          nouveau membre.
+        </h5>
+        <div class="form-area flex-column">
+          <label for="nom">Nom</label>
+          <input type="text" name="nom" id="nom" required />
         </div>
-    </section>
+        <div class="form-area flex-column">
+          <label for="prenom">Prénom(s)</label>
+          <input type="text" name="prenom" id="prenom" required />
+        </div>
+        <div class="form-area flex-column">
+          <label for="sexe">Sexe</label>
+          <select name="sexe" id="sexe">
+            <option value="0">Masculin</option>
+            <option value="1">Féminin</option>
+          </select>
+        </div>
+        <div class="form-area flex-column">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="form-area flex-column">
+          <label for="contact">Contact</label>
+          <input type="tel" name="contact" id="contact" required />
+        </div>
+        <div class="form-area flex-column">
+          <label for="role">Rôle dans le TP</label>
+          <textarea
+            name="role"
+            id="role"
+            cols="30"
+            rows="8"
+            placeholder="Taper \' pour insérez une apostrophe !"
+          ></textarea>
+        </div>
+        <div class="form-area flex-column">
+          <label for="photo">Uploader votre photo</label>
+          <input type="file" name="photo" id="photo" accept="image/*" />
+        </div>
+        <input type="hidden" name="pg" value="addMember" />
+        <button type="submit">Ajouter</button>
+      </form>
+    </div>
+  </section>
 </div>

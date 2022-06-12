@@ -1,13 +1,14 @@
 <?php
+
     //var_dump($_REQUEST['id']);
     require_once('connection.php');
 
-    if (isset($_REQUEST['id'])){
-        foreach($_REQUEST['id'] as $id){
+    if (isset($_REQUEST['id'])) {
+        foreach ($_REQUEST['id'] as $id) {
             $req="DELETE FROM articles WHERE id='" .$id ."'";
-            $result=mysqli_query($link,$req);
+            $result=mysqli_query($link, $req);
         }
-    }else{
+    } else {
         //Affichage d'un message de warning
         //Aucun article n'a été sélectionner pour la suppression
         echo <<<'EOT'

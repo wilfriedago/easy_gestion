@@ -1,4 +1,5 @@
 <?php
+
     //Connection à la BDD easy_gestion
         require_once('connection.php');
 
@@ -6,12 +7,12 @@
         $nbmember="SELECT COUNT(*) AS nb FROM articles";
 
     //On exécute la requête
-        $result=mysqli_query($link,$nbmember);
+        $result=mysqli_query($link, $nbmember);
 
     //On convertir le résultat de la requête sous forme de tableau associatif
         $members=mysqli_fetch_assoc($result);
 
-    if ( $members['nb'] == 0 ){//Si aucun n'enregistrement n'est encore fait
+    if ($members['nb'] == 0) {//Si aucun n'enregistrement n'est encore fait
 
         //On affiche la page de la liste vide
         echo <<<'EOT'
@@ -37,10 +38,10 @@
                     </section>
                 </div>
             EOT;
-    }else{ //Si la BDD contient au moins 1 article
+    } else { //Si la BDD contient au moins 1 article
 
         $req="SELECT * FROM articles";
-        $result=mysqli_query($link,$req);
+        $result=mysqli_query($link, $req);
 
         echo <<<'EOT'
                 <div class="container" id="page5">
@@ -73,9 +74,8 @@
                                     <tbody>
             EOT;
 
-    while ($ligne = mysqli_fetch_assoc($result)) {
-
-        require ('function.php');
+        while ($ligne = mysqli_fetch_assoc($result)) {
+            require('function.php');
 
             echo '<tr>'
                 . "<td><input type='checkbox' name='id[]' value='" . $ligne['id'] . "'></td>"
@@ -85,7 +85,13 @@
                 . "<td>" . $ligne['prix'] . "&nbsp;&nbsp;XOF</td>"
                 . "<td>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp" . $ligne['quantite'] . "</td>"
                 . "<td>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp" . $msg_solde . "</td>"
-                . "<td>"; if($ligne['en_solde'] == 1) echo $prix_solde.'&nbsp;&nbsp;XOF'; else echo '--------------'; echo "</td>"
+                . "<td>";
+            if ($ligne['en_solde'] == 1) {
+                echo $prix_solde.'&nbsp;&nbsp;XOF';
+            } else {
+                echo '--------------';
+            }
+            echo "</td>"
                 . "<td>" . "<a href='index.php?pg=article_details&id=" . $ligne['id'] . "'id='italic'>Voir ce produit</a></td>"
                 . '</tr>';
         }

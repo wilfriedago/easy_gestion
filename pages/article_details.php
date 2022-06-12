@@ -2,10 +2,10 @@
 
     require_once('connection.php');
     $req="SELECT * FROM articles WHERE id='".$_REQUEST['id']."'";
-    $result=mysqli_query($link,$req);
+    $result=mysqli_query($link, $req);
     $ligne=mysqli_fetch_assoc($result);
 
-    require_once ('function.php');
+    require_once('function.php');
 
 ?>
 
@@ -23,7 +23,9 @@
         <div class="article_details flex-row">
             <div class="article_thumbnails">
                 <img src="<?php echo $ligne['apercu']; ?>" alt="photo de l'article">
-                <?php if($ligne['en_solde'] == 1) echo "<span id='reduction'>-".($taux_reduction * 100)."%</span>"; ?>
+                <?php if ($ligne['en_solde'] == 1) {
+    echo "<span id='reduction'>-".($taux_reduction * 100)."%</span>";
+} ?>
             </div>
             <div class="article_detail">
                 <?php
@@ -34,7 +36,7 @@
 
                     //Si l'article est en solde on affiche le prix normal, qu'on barre pour ensuite afficher le prix
                     // en solde, et si l'article n'est pas en solde on affiche le justeprix tout court.
-                    if($ligne['en_solde'] == 1){
+                    if ($ligne['en_solde'] == 1) {
                         echo "<h5 id='prix'>";
                         echo $ligne['prix'];
                         echo "&nbsp;XOF</h5>";

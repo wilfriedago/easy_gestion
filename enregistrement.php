@@ -1,9 +1,10 @@
 <?php
-    include_once ('pages/header.inc.php');
 
-    switch($_REQUEST['pg']){
+    include_once('pages/header.inc.php');
 
-        case 'addMember' :
+    switch ($_REQUEST['pg']) {
+
+        case 'addMember':
             //Connection à la BDD easy_gestion
                 require_once('connection.php');
 
@@ -11,7 +12,7 @@
                 $nbmember="SELECT COUNT(*) AS nb FROM `members`";
 
             //On exécute la requête
-                $result=mysqli_query($link,$nbmember);
+                $result=mysqli_query($link, $nbmember);
 
             //On convertir le résultat de la requête sous forme de tableau associatif
                 $members=mysqli_fetch_assoc($result);
@@ -21,10 +22,10 @@
 
                 include_once('pages/member_add.html');
 
-                    if ( $members['nb'] >= $nbMax ){ //Si la limite est atteint
+                    if ($members['nb'] >= $nbMax) { //Si la limite est atteint
 
-                    //Affichage d'un message d'erreur
-                    echo <<<'EOT'
+                        //Affichage d'un message d'erreur
+                        echo <<<'EOT'
                                 <section>
                                     <div id="modal-box" class="flex-column member-add" onclick='modalBoxActivity()'>
                                         <div class="flex-column">
@@ -34,13 +35,13 @@
                                     </div>
                                 </section>
                              EOT;
-                        }else{ //Si la limite n'est pas atteint
+                    } else { //Si la limite n'est pas atteint
 
-                            //On upload l'image
-                            require_once ('file_upload.php');
+                        //On upload l'image
+                        require_once('file_upload.php');
 
-                            //Insertion des informations dans la BDD.members
-                            $req= "INSERT INTO members"
+                        //Insertion des informations dans la BDD.members
+                        $req= "INSERT INTO members"
                                  ." VALUES(NULL,'".$_REQUEST['nom']
                                  ."','" .$_REQUEST['prenom']
                                  ."','" .$_REQUEST['sexe']
@@ -49,10 +50,10 @@
                                  ."','" .$_REQUEST['role']
                                  ."','" .$image_uploader."')";
 
-                            $result=mysqli_query($link,$req);
+                        $result=mysqli_query($link, $req);
 
-                            //Affichage d'un message de succès
-                            echo <<<'EOT'
+                        //Affichage d'un message de succès
+                        echo <<<'EOT'
                                     <section>
                                         <div id="modal-box" class="flex-column member-add" onclick='modalBoxActivity()'>
                                             <div class="flex-column">
@@ -65,12 +66,12 @@
                     }
             break;
 
-        case 'addArticle' :
+        case 'addArticle':
             //Connection à la BDD easy_gestion
                 require_once('connection.php');
 
             //On upload l'image
-                require_once ('file_upload.php');
+                require_once('file_upload.php');
 
             //Insertion des informations dans la BDD.products
                 $req="INSERT INTO articles"
@@ -81,9 +82,9 @@
                     ."','" .$_REQUEST['en_solde']
                     ."','" .$image_uploader."')";
 
-                    $result=mysqli_query($link,$req);
+                    $result=mysqli_query($link, $req);
 
-                    include_once ('pages/article_add.php');
+                    include_once('pages/article_add.php');
 
             //Affichage d'un message de succès, utilisant la syntaxe Nowdoc string quoting
                 echo <<<'EOT'
